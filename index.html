@@ -29,7 +29,7 @@
         <header class="header-section">
             <div class="header-content">
                 <img src="https://i.ibb.co/7jcB1WM/aravind.jpg" alt="Profile Image" class="profile-img">
-                <h1>Hi, I'm BUDAMAGUNTA ANANTHA ARAVIND</h1>
+                <h1>Hi, I'm [Your Name]</h1>
                 <p>Passionate Developer | AI Enthusiast | Problem Solver</p>
             </div>
         </header>
@@ -55,15 +55,17 @@
 
         <section id="contact" class="section contact-section hidden">
             <h2>Contact Me</h2>
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                 <input type="hidden" name="access_key" value="dd5ea13d-80a2-4154-820c-0d18fda7a00f">
-                
-               Name: <input type="text" id="name" name="name" required></br>
 
-               Email: <input type="email" id="email" name="email" required></br>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-                
-             Message:<textarea id="message" name="message" required></textarea></br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
 
                 <button type="submit">Send Message</button>
             </form>
@@ -93,3 +95,4 @@
     </script>
 </body>
 </html>
+
