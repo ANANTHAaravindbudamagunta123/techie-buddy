@@ -4,20 +4,12 @@
     box-sizing: border-box;
 }
 
-:root {
-    --background-color: #fff; /* Default white background */
-    --text-color: #000; /* Default text color */
-    --link-hover-color: #2575fc; /* Default link hover color */
-    --sidebar-background: #6a11cb; /* Default sidebar color */
-}
-
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     overflow-x: hidden;
     height: 100vh;
-    background-color: var(--background-color); /* Using CSS variable for background */
-    color: var(--text-color); /* Text color changes dynamically */
+    background-color: #f4f4f4; /* Add background color to body */
 }
 
 /* Hamburger Menu */
@@ -35,14 +27,14 @@ body {
 .hamburger-menu .line {
     width: 30px;
     height: 3px;
-    background: var(--text-color);
+    background: #333;
     transition: transform 0.3s ease;
 }
 
 /* Sidebar Styling */
 .sidebar {
     width: 250px;
-    background: var(--sidebar-background);
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #fff;
     padding: 2rem 1rem;
     position: fixed;
@@ -79,24 +71,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-    background: var(--link-hover-color);
-}
-
-/* Theme Toggle Button */
-.theme-toggle-btn {
-    background-color: #ff7e5f;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.theme-toggle-btn:hover {
-    background-color: #feb47b;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Main Content Styling */
@@ -110,7 +85,7 @@ body {
 .header-section {
     height: 80vh;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: var(--text-color);
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,6 +130,52 @@ body {
     padding: 20px;
 }
 
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; /* Centering form horizontally */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+/* Hover Effects */
+.contact-form input:hover,
+.contact-form textarea:hover,
+.contact-form button:hover {
+    border-color: #6a11cb;
+    transform: scale(1.05);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form button:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 10px rgba(37, 117, 252, 0.5);
+}
+
+.contact-form button {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    transform: scale(1.1);
+}
+
 /* Fade-In Animation */
 @keyframes fadeIn {
     from {
@@ -169,33 +190,17 @@ body {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px; /* Adjust font size for mobile */
-    }
-
-    .hamburger-menu {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1000;
-    }
-
     .header-section {
-        height: 60vh; /* Adjust header section height */
+        height: 60vh;
     }
 
     .header-content h1 {
-        font-size: 1.8rem; /* Adjust font size */
+        font-size: 2rem;
     }
 
     .sidebar {
         width: 200px;
         padding: 1rem;
-    }
-
-    .sidebar ul li a {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
     }
 
     .contact-form {
@@ -209,8 +214,13 @@ body {
         padding: 0.8rem;
     }
 
-    .theme-toggle-btn {
-        font-size: 0.9rem;
+    .hamburger-menu {
+        display: flex;
+        gap: 4px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
     }
 
     .contact-section {
@@ -234,9 +244,4 @@ body {
     .contact-section {
         margin-bottom: 3rem;
     }
-
-    .header-content h1 {
-        font-size: 1.6rem;
-    }
 }
-
