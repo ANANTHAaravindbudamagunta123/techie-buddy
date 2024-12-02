@@ -22,6 +22,8 @@
             <li><a href="#education" onclick="showSection('education')">Education</a></li>
             <li><a href="#contact" onclick="showSection('contact')">Contact Me</a></li>
         </ul>
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" onclick="toggleTheme()">Switch to Dark Mode</button>
     </div>
 
     <!-- Main Content -->
@@ -74,6 +76,8 @@
 
     <!-- JavaScript -->
     <script>
+        let isDarkMode = false;
+
         // Function to toggle sidebar
         function toggleMenu() {
             const sidebar = document.getElementById("sidebar");
@@ -91,6 +95,27 @@
             // Close sidebar (optional for better UX on mobile)
             const sidebar = document.getElementById("sidebar");
             sidebar.classList.remove("active");
+        }
+
+        // Function to toggle the theme between light and dark
+        function toggleTheme() {
+            const root = document.documentElement;
+            isDarkMode = !isDarkMode;
+
+            // Toggle theme based on isDarkMode flag
+            if (isDarkMode) {
+                root.style.setProperty('--background-color', '#181818');
+                root.style.setProperty('--text-color', '#fff');
+                root.style.setProperty('--link-hover-color', '#ff7e5f');
+                root.style.setProperty('--sidebar-background', '#333');
+                document.querySelector('.theme-toggle-btn').textContent = 'Switch to Light Mode';
+            } else {
+                root.style.setProperty('--background-color', '#fff');
+                root.style.setProperty('--text-color', '#000');
+                root.style.setProperty('--link-hover-color', '#2575fc');
+                root.style.setProperty('--sidebar-background', '#6a11cb');
+                document.querySelector('.theme-toggle-btn').textContent = 'Switch to Dark Mode';
+            }
         }
     </script>
 </body>
