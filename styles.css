@@ -1,15 +1,44 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Define theme colors as variables */
+:root {
+    --background-color: #f4f4f4; /* Default light theme background */
+    --text-color: #000; /* Default light theme text color */
+    --link-hover-color: #2575fc; /* Default hover color for links */
+    --sidebar-background: #6a11cb; /* Default sidebar background */
+    --button-background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Default button background */
+    --button-hover-scale: 1.05; /* Default hover scale for buttons */
+    --input-border-color: #ddd; /* Default input border color */
+    --input-focus-border-color: #2575fc; /* Default input focus border color */
+    --input-focus-shadow: rgba(37, 117, 252, 0.5); /* Default input focus shadow */
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --background-color: #181818;
+    --text-color: #fff;
+    --link-hover-color: #ff7e5f;
+    --sidebar-background: #333;
+    --button-background: linear-gradient(135deg, #6a11cb, #2575fc);
+    --button-hover-scale: 1.1;
+    --input-border-color: #444;
+    --input-focus-border-color: #ff7e5f;
+    --input-focus-shadow: rgba(255, 126, 95, 0.5);
+}
+
+/* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     overflow-x: hidden;
     height: 100vh;
-    background-color: #f4f4f4; /* Add background color to body */
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* Hamburger Menu */
@@ -34,7 +63,7 @@ body {
 /* Sidebar Styling */
 .sidebar {
     width: 250px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: var(--sidebar-background);
     color: #fff;
     padding: 2rem 1rem;
     position: fixed;
@@ -85,7 +114,7 @@ body {
 .header-section {
     height: 80vh;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: #fff;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,6 +134,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* Sections Styling */
 .section {
     padding: 5rem 2rem;
     display: none;
@@ -136,7 +166,7 @@ body {
     gap: 1rem;
     max-width: 500px;
     width: 100%;
-    margin: 0 auto; /* Centering form horizontally */
+    margin: 0 auto;
 }
 
 .contact-form input,
@@ -144,30 +174,29 @@ body {
 .contact-form button {
     padding: 1rem;
     border-radius: 5px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--input-border-color);
     font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
     width: 100%;
 }
 
-/* Hover Effects */
 .contact-form input:hover,
 .contact-form textarea:hover,
 .contact-form button:hover {
     border-color: #6a11cb;
-    transform: scale(1.05);
+    transform: scale(var(--button-hover-scale));
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form button:focus {
-    border-color: #2575fc;
-    box-shadow: 0 0 10px rgba(37, 117, 252, 0.5);
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 10px var(--input-focus-shadow);
 }
 
 .contact-form button {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background: var(--button-background);
     color: #fff;
     cursor: pointer;
 }
