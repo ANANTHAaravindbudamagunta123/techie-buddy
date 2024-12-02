@@ -121,5 +121,122 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin-bottom:
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section {
+    padding: 5rem 2rem;
+    display: none;
+}
+
+.section.hidden {
+    display: none;
+}
+
+.section:not(.hidden) {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out;
+    margin-bottom: 2rem;
+    padding: 20px;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .hamburger-menu {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+    }
+
+    .header-section {
+        height: 60vh; /* Adjust header section height */
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem; /* Adjust font size */
+    }
+
+    .sidebar {
+        width: 200px;
+        padding: 1rem;
+    }
+
+    .sidebar ul li a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    .theme-toggle-btn {
+        font-size: 0.9rem;
+    }
+
+    .contact-section {
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+}
+
+/* Mobile Contact Form Layout */
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 0.8rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        padding: 0.7rem;
+    }
+
+    .contact-section {
+        margin-bottom: 3rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.6rem;
+    }
+}
 
